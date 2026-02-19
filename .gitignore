@@ -1,0 +1,16 @@
+# 忽略所有系統產生的 .DS_Store 檔案
+.DS_Store
+**/.DS_Store
+
+# 忽略 public 資料夾下所有常見格式的圖片檔案
+# 使用 **/ 確保包含子資料夾中的圖片
+public/**/*.jpg
+public/**/*.jpeg
+public/**/*.JPG
+public/**/*.JPEG
+public/**/*.png
+public/**/*.PNG
+public/**/*.gif
+public/**/*.GIF
+public/**/*.webp
+public/**/*.svg

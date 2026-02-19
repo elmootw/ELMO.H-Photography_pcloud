@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELMO.H Photography</title>
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 class="navbar-logo">ELMO.H Photography</h1>
+            
+            <ul class="navbar-menu">
+                <li><a href="#about-section" class="nav-link">About Me</a></li>
+                <li><a href="#" class="nav-link" data-page="street">街拍</a></li>
+                <li><a href="#" class="nav-link" data-page="landscape">風景</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" title="切換主題">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+                <li><a href="#" class="nav-link" id="topBtn">↑ Top</a></li>
+            </ul>
+
+            <div class="social-links">
+                <a href="https://elmootw.github.io" target="_blank" rel="noopener noreferrer" class="social-icon" title="Blog">Blog</a>
+                <a href="https://youtube.com/@elmoisfree?si=QRqSZypPOtPwYNC2" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube">YouTube</a>
+                <a href="https://www.instagram.com/elmootw/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">Instagram</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main>
+        <!-- Hero 部分 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>ELMO.H Photography</h2>
+                <p>用鏡頭呈現生活的美好時刻</p>
+            </div>
+        </section>
+
+        <!-- About 部分 -->
+        <section class="about-section" id="about-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    我是 ELMO，一位熱情的攝影師，致力於用鏡頭捕捉每個珍貴的時刻。
+                    無論是人像、婚禮、活動或風景，我都期待以獨特的視角為您呈現故事。
+                </p>
+            </div>
+        </section>
+
+        <!-- 相簿列表 -->
+        <section class="gallery-section" id="albumsSection">
+            <div class="container">
+                <h2>作品相簿</h2>
+                
+                <!-- 標籤篩選（由 JavaScript 動態生成） -->
+                <div class="hashtag-filter" id="hashtagFilter"></div>
+
+                <!-- 相簿卡片容器 -->
+                <div class="albums-grid" id="albumsGrid"></div>
+            </div>
+        </section>
+    </main>
+    <!-- 街拍分頁 -->
+    <section class="special-page" id="streetPage" style="display: none;">
+        <div class="container">
+            <div class="special-page-header">
+                <h2>街拍</h2>
+                <button class="back-btn" data-back="street">← 返回</button>
+            </div>
+            <div class="special-photos-grid" id="streetPhotosGrid"></div>
+        </div>
+    </section>
+
+    <!-- 風景分頁 -->
+    <section class="special-page" id="landscapePage" style="display: none;">
+        <div class="container">
+            <div class="special-page-header">
+                <h2>風景</h2>
+                <button class="back-btn" data-back="landscape">← 返回</button>
+            </div>
+            <div class="special-photos-grid" id="landscapePhotosGrid"></div>
+        </div>
+    </section>
+    <!-- 相簿詳情 Modal (照片網格) -->
+    <div class="modal" id="albumModal">
+        <span class="modal-close" data-modal="albumModal">&times;</span>
+        <div class="modal-content album-modal-content">
+            <h2 id="albumTitle"></h2>
+            <p id="albumDescription"></p>
+            <div class="album-photos-grid" id="albumPhotosGrid"></div>
+        </div>
+    </div>
+
+    <!-- 圖片 Modal (單張放大) -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" data-modal="imageModal">&times;</span>
+        <div class="modal-content">
+            <button class="modal-prev" onclick="previousImage()">‹</button>
+            <img id="modalImage" src="" alt="放大圖片" class="modal-image">
+            <button class="modal-next" onclick="nextImage()">›</button>
+        </div>
+        <div class="image-counter">
+            <span id="currentImageIndex">1</span> / <span id="totalImages">1</span>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ELMO.H Photography. All rights reserved.</p>
+    </footer>
+
+    <script src="src/app.js"></script>
+</body>
+</html>
