@@ -68,6 +68,14 @@ body {
     font-weight: 700;
     color: var(--text-primary);
     white-space: nowrap;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+    color: var(--text-secondary);
 }
 
 .navbar-menu {
@@ -138,24 +146,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-}
-
-/* ====== Hero 區段 ====== */
-.hero {
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-    padding: 6rem 2rem;
-    text-align: center;
-}
-
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
 }
 
 /* ====== About 區段 ====== */
@@ -540,10 +530,6 @@ footer {
         gap: 1rem;
     }
 
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-
     .albums-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 1rem;
@@ -621,18 +607,6 @@ footer {
 
     .navbar-menu {
         gap: 0.8rem;
-    }
-
-    .hero {
-        padding: 3rem 1rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
     }
 
     .albums-grid {
