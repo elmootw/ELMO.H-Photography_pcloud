@@ -273,7 +273,7 @@ function renderSpecialPhotos(type, photos) {
     
     photos.forEach((imagePath, index) => {
         const photoItem = document.createElement('div');
-        photoItem.className = 'album-photo-item';
+        photoItem.className = 'special-photo-item';
         
         const img = document.createElement('img');
         img.src = imagePath;

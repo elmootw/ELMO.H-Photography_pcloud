@@ -513,22 +513,28 @@ footer {
     padding: 0;
 }
 
-.special-photos-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
+.special-photo-item {
+    position: relative;
+    overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 2px 8px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     break-inside: avoid;
     line-height: 0;
 }
 
-.special-photos-grid img:hover {
+.special-photo-item:hover {
     transform: scale(1.02);
-    box-shadow: 0 4px 16px var(--shadow-color);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.special-photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 /* ====== 響應式設計 ====== */
