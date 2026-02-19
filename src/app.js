@@ -3,7 +3,7 @@ let albumsData = [];
 let currentFilter = 'all';
 let currentAlbumImages = [];
 let currentImageIndex = 0;
-let currentPage = 'albums'; // 'albums', 'street', 或 'landscape'
+let currentPage = 'albums'; // 'albums', 'about', 'street', 或 'landscape'
 let allPhotos = { street: [], landscape: [] }; // 街拍和風景的所有照片
 
 // ====== 初始化 ======
@@ -112,10 +112,11 @@ function renderAlbums(filter) {
     currentFilter = filter;
     currentPage = 'albums';
     
-    // 顯示相簇部分，隱藏街拍/風景部分
+    // 顯示相簇部分，隱藏街拍/風景/About 部分
     document.getElementById('albumsSection').style.display = 'block';
     document.getElementById('streetPage').style.display = 'none';
     document.getElementById('landscapePage').style.display = 'none';
+    document.getElementById('aboutPage').style.display = 'none';
     
     const gridContainer = document.getElementById('albumsGrid');
     gridContainer.innerHTML = '';
@@ -226,6 +227,7 @@ function showStreetPhotos() {
     
     // 隱藏其他部分
     document.getElementById('albumsSection').style.display = 'none';
+    document.getElementById('aboutPage').style.display = 'none';
     document.getElementById('landscapePage').style.display = 'none';
     document.getElementById('streetPage').style.display = 'block';
     
@@ -239,9 +241,23 @@ function showLandscapePhotos() {
     // 隱藏其他部分
     document.getElementById('albumsSection').style.display = 'none';
     document.getElementById('streetPage').style.display = 'none';
+    document.getElementById('aboutPage').style.display = 'none';
     document.getElementById('landscapePage').style.display = 'block';
     
     renderSpecialPhotos('landscape', allPhotos.landscape);
+}
+
+// ====== About 分頁 ======
+function showAbout() {
+    currentPage = 'about';
+    
+    // 隱藏其他部分
+    document.getElementById('albumsSection').style.display = 'none';
+    document.getElementById('streetPage').style.display = 'none';
+    document.getElementById('landscapePage').style.display = 'none';
+    document.getElementById('aboutPage').style.display = 'block';
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ====== 渲染街拍/風景照片（Masonry 布局） ======
@@ -340,13 +356,15 @@ function setupEventListeners() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // 導航欄的街拍和風景鏈接
+    // 導航欄的 About、街拍和風景鏈接
     const navLinks = document.querySelectorAll('[data-page]');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const page = link.dataset.page;
-            if (page === 'street') {
+            if (page === 'about') {
+                showAbout();
+            } else if (page === 'street') {
                 showStreetPhotos();
             } else if (page === 'landscape') {
                 showLandscapePhotos();

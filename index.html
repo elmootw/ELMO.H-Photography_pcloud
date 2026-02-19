@@ -13,7 +13,7 @@
             <a href="#albumsSection" class="navbar-logo">ELMO.H Photography</a>
             
             <ul class="navbar-menu">
-                <li><a href="#about-section" class="nav-link">About Me</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About Me</a></li>
                 <li><a href="#" class="nav-link" data-page="street">街拍</a></li>
                 <li><a href="#" class="nav-link" data-page="landscape">風景</a></li>
                 <li>
@@ -47,17 +47,6 @@
 
     <!-- 主要內容 -->
     <main>
-        <!-- About 部分 -->
-        <section class="about-section" id="about-section">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>
-                    我是 ELMO，一位熱情的攝影師，致力於用鏡頭捕捉每個珍貴的時刻。
-                    無論是人像、婚禮、活動或風景，我都期待以獨特的視角為您呈現故事。
-                </p>
-            </div>
-        </section>
-
         <!-- 相簿列表 -->
         <section class="gallery-section" id="albumsSection">
             <div class="container">
@@ -71,6 +60,23 @@
             </div>
         </section>
     </main>
+
+    <!-- About 分頁 -->
+    <section class="special-page" id="aboutPage" style="display: none;">
+        <div class="container">
+            <div class="special-page-header">
+                <h2>About Me</h2>
+                <button class="back-btn" data-back="about">← 返回</button>
+            </div>
+            <div class="about-content">
+                <p>
+                    我是 ELMO，一位熱情的攝影師，致力於用鏡頭捕捉每個珍貴的時刻。
+                    無論是人像、婚禮、活動或風景，我都期待以獨特的視角為您呈現故事。
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- 街拍分頁 -->
     <section class="special-page" id="streetPage" style="display: none;">
         <div class="container">

@@ -494,6 +494,18 @@ footer {
     opacity: 0.9;
 }
 
+/* About 內容 */
+.about-content {
+    max-width: 600px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+}
+
 /* 街拍/風景照片網格 */
 .special-photos-grid {
     column-count: 4;
