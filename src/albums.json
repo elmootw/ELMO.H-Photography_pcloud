@@ -20,6 +20,33 @@
   },
   "albums": [
     {
+      "id": 31,
+      "title": "Jin & Teresa",
+      "description": "2026",
+      "categories": [
+        "登記"
+      ],
+      "cover": "public/images/31-Jin & Teresa|2026|登記/cover.jpg",
+      "images": [
+        "public/images/31-Jin & Teresa|2026|登記/photo-1.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-2.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-3.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-4.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-5.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-6.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-7.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-8.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-9.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-10.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-11.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-12.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-13.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-14.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-15.jpg",
+        "public/images/31-Jin & Teresa|2026|登記/photo-16.jpg"
+      ]
+    },
+    {
       "id": 30,
       "title": "Shawn & Rebacca 性別趴",
       "description": "2025",
